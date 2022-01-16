@@ -15,7 +15,7 @@ function Header() {
               height="30"
               className="d-inline-block align-top"
               />{' '} */}
-              <FontAwesomeIcon icon={faWarehouse} />
+              <FontAwesomeIcon icon={faWarehouse} className="d-inline-block"/>{' '}
               <span>Winchester RV and Boat Storage</span>
           </Navbar.Brand>
         </Container>
