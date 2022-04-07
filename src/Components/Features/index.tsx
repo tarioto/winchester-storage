@@ -29,19 +29,23 @@ interface FeatureProps {
 const Feature = ({ title, text, icon }: FeatureProps) => {
   return (
     <Stack>
-      <Flex
-        w={16}
-        h={16}
-        align={'center'}
-        justify={'center'}
-        rounded={'full'}
-        color={'teal.400'}
-        bg={useColorModeValue('teal.50', 'teal.900')}
-        mb={1}
-      >
-        {icon}
-      </Flex>
-      <Text fontWeight={600}>{title}</Text>
+      <Center>
+        <Flex
+          w={16}
+          h={16}
+          align={'center'}
+          justify={'center'}
+          rounded={'full'}
+          color={'teal.400'}
+          bg={useColorModeValue('teal.50', 'teal.900')}
+          mb={1}
+        >
+          {icon}
+        </Flex>
+      </Center>
+      <Center>
+        <Text fontWeight={600}>{title}</Text>
+      </Center>
       <Text color={'gray.600'}>{text}</Text>
     </Stack>
   )
