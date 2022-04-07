@@ -34,7 +34,6 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
         h={16}
         align={'center'}
         justify={'center'}
-        color={'black'}
         rounded={'full'}
         bg={'gray.100'}
         mb={1}
