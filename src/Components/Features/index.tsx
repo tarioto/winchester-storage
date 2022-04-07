@@ -53,7 +53,7 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
 
 export default function Features() {
   return (
-    <Box bg={useColorModeValue('gray.200', 'gray.900')}>
+    <Box bg={useColorModeValue('gray.100', 'gray.900')}>
       <Container maxW={'5xl'} py={12}>
         <Center p="10">
           <Heading size="md">All units are 15’x50’ </Heading>

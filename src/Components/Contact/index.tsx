@@ -11,9 +11,9 @@ import { faEnvelope, faPhone } from '@fortawesome/pro-duotone-svg-icons'
 
 function Contact() {
   return (
-    <Box bg={useColorModeValue('gray.200', 'gray.900')}>
+    <Box bg={useColorModeValue('gray.100', 'gray.900')}>
       <Container
-        bg={useColorModeValue('gray.200', 'gray.900')}
+        bg={useColorModeValue('gray.100', 'gray.900')}
         maxW={'5xl'}
         py={12}
       >
@@ -35,6 +35,10 @@ function Contact() {
             size={'lg'}
             ml={4}
             leftIcon={<FontAwesomeIcon icon={faEnvelope} />}
+            onClick={(e) => {
+              window.location.href = `mailto:timarioto@gmail.com`
+              e.preventDefault()
+            }}
           >
             Email
           </Button>
