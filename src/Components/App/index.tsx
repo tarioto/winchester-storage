@@ -1,13 +1,17 @@
 import React from 'react'
 import './style.scss'
 import Header from '../Header'
+import Home from '../Home'
+import Map from '../Map'
+import Features from '../Features'
 
 function App() {
   return (
     <div className="App">
       <Header />
-
-      <h1>Coming soon...</h1>
+      <Home />
+      <Map />
+      <Features />
     </div>
   )
 }
