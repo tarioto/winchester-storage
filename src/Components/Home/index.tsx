@@ -1,17 +1,20 @@
-import './style.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWarehouse } from '@fortawesome/pro-duotone-svg-icons'
 import {
   Container,
   Flex,
   Heading,
-  Text,
+  Image,
+  Stack,
   StackDivider,
   SimpleGrid,
-  Stack,
+  Text,
   useColorModeValue,
-  Image,
+  Button,
 } from '@chakra-ui/react'
+import {
+  faMessageMiddle,
+  faWarehouse,
+} from '@fortawesome/pro-duotone-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Home() {
   return (
@@ -28,7 +31,7 @@ function Home() {
             alignSelf={'flex-start'}
             rounded={'md'}
           >
-            Units available
+            <FontAwesomeIcon icon={faWarehouse} /> Units available
           </Text>
           <Heading>Winchester RV, boat and Classics Storage</Heading>
           <Text color={'gray.500'} fontSize={'lg'}>
@@ -36,6 +39,15 @@ function Home() {
             located 1/2 mile from two major grocery stores, two major fuel
             stations and from highway 580 onramp.
           </Text>
+          <Button
+            variant={'solid'}
+            colorScheme={'teal'}
+            size={'sm'}
+            ml={4}
+            leftIcon={<FontAwesomeIcon icon={faMessageMiddle} />}
+          >
+            Get in Touch
+          </Button>
           <Stack
             spacing={4}
             divider={
@@ -48,7 +60,7 @@ function Home() {
         <Flex>
           <Image
             rounded={'md'}
-            alt={'feature image'}
+            alt={'hero'}
             src={process.env.PUBLIC_URL + '/images/outside.png'}
             objectFit={'cover'}
           />
