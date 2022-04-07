@@ -1,10 +1,10 @@
 import {
   Box,
-  chakra,
   SimpleGrid,
   Container,
   Button,
   useColorModeValue,
+  Heading,
 } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from '@fortawesome/pro-duotone-svg-icons'
@@ -17,16 +17,22 @@ function Contact() {
         maxW={'5xl'}
         py={12}
       >
-        <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
-          <chakra.h1 textAlign={'center'} fontSize={'4xl'} fontWeight={'bold'}>
+        <Box
+          maxW="7xl"
+          mx={'auto'}
+          pt={5}
+          pb={10}
+          px={{ base: 2, sm: 12, md: 17 }}
+        >
+          <Heading textAlign={'center'} fontSize={'4xl'} fontWeight={'bold'}>
             Interested? Contact us to find out more!
-          </chakra.h1>
+          </Heading>
         </Box>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
           <Button
             variant={'solid'}
             colorScheme={'teal'}
-            size={'sm'}
+            size={'lg'}
             ml={4}
             leftIcon={<FontAwesomeIcon icon={faEnvelope} />}
           >
@@ -35,7 +41,7 @@ function Contact() {
           <Button
             variant={'solid'}
             colorScheme={'teal'}
-            size={'sm'}
+            size={'lg'}
             ml={4}
             leftIcon={<FontAwesomeIcon icon={faPhone} />}
           >
