@@ -36,7 +36,7 @@ function Contact() {
             ml={4}
             leftIcon={<FontAwesomeIcon icon={faEnvelope} />}
             onClick={(e) => {
-              window.location.href = `mailto:timarioto@gmail.com`
+              window.location.href = `mailto:lee@winchesterrvandboatstorage.com`
               e.preventDefault()
             }}
           >
@@ -48,6 +48,10 @@ function Contact() {
             size={'lg'}
             ml={4}
             leftIcon={<FontAwesomeIcon icon={faPhone} />}
+            onClick={(e) => {
+              window.location.href = `tel:+1-775-447-0573`
+              e.preventDefault()
+            }}
           >
             Call
           </Button>
