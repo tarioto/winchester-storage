@@ -31,7 +31,7 @@ function Contact() {
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
           <Button
             variant={'solid'}
-            colorScheme={'teal'}
+            colorScheme={'blue'}
             size={'lg'}
             ml={4}
             leftIcon={<FontAwesomeIcon icon={faEnvelope} />}
@@ -44,7 +44,7 @@ function Contact() {
           </Button>
           <Button
             variant={'solid'}
-            colorScheme={'teal'}
+            colorScheme={'blue'}
             size={'lg'}
             ml={4}
             leftIcon={<FontAwesomeIcon icon={faPhone} />}
