@@ -10,11 +10,12 @@ import {
   useColorModeValue,
   Button,
 } from '@chakra-ui/react'
-import {
-  faMessageMiddle,
-  faWarehouse,
-} from '@fortawesome/pro-duotone-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faWarehouse,
+  faEnvelope,
+  faPhone,
+} from '@fortawesome/pro-duotone-svg-icons'
 
 function Home() {
   return (
@@ -39,7 +40,7 @@ function Home() {
             located 1/2 mile from two major grocery stores, two major fuel
             stations and from highway 580 onramp.
           </Text>
-          <Button
+          {/* <Button
             variant={'solid'}
             colorScheme={'blue'}
             size={'lg'}
@@ -47,7 +48,34 @@ function Home() {
             leftIcon={<FontAwesomeIcon icon={faMessageMiddle} />}
           >
             Get in Touch
-          </Button>
+          </Button> */}
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
+            <Button
+              variant={'solid'}
+              colorScheme={'blue'}
+              size={'lg'}
+              leftIcon={<FontAwesomeIcon icon={faEnvelope} />}
+              onClick={(e) => {
+                window.location.href = `mailto:lee@winchesterrvandboatstorage.com`
+                e.preventDefault()
+              }}
+            >
+              Email
+            </Button>
+            <Button
+              variant={'solid'}
+              colorScheme={'blue'}
+              size={'lg'}
+              ml={4}
+              leftIcon={<FontAwesomeIcon icon={faPhone} />}
+              onClick={(e) => {
+                window.location.href = `tel:+1-775-447-0573`
+                e.preventDefault()
+              }}
+            >
+              Call
+            </Button>
+          </SimpleGrid>
           <Stack
             spacing={4}
             divider={
