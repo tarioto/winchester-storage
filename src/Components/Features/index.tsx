@@ -22,7 +22,7 @@ import {
 
 interface FeatureProps {
   title: string
-  text: string
+  text?: string
   icon: ReactElement
 }
 
@@ -36,8 +36,8 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
           align={'center'}
           justify={'center'}
           rounded={'full'}
-          color={'teal.400'}
-          bg={useColorModeValue('teal.50', 'teal.900')}
+          color={useColorModeValue('blue.700', 'blue.200')}
+          bg={useColorModeValue('blue.100', 'blue.900')}
           mb={1}
         >
           {icon}
@@ -62,42 +62,42 @@ export default function Features() {
           <Feature
             icon={<FontAwesomeIcon icon={faThermometerHalf} size="2x" />}
             title={'Individually heated'}
-            text={
-              'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
-            }
+            // text={
+            //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
+            // }
           />
           <Feature
             icon={<FontAwesomeIcon icon={faCameraCctv} size="2x" />}
             title={'Video surveillance'}
-            text={
-              'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
-            }
+            // text={
+            //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
+            // }
           />
           <Feature
             icon={<FontAwesomeIcon icon={faFence} size="2x" />}
             title={'Fully fenced'}
-            text={
-              'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
-            }
+            // text={
+            //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
+            // }
           />
           <Feature
             icon={<FontAwesomeIcon icon={faLightEmergencyOn} size="2x" />}
             title={'Individually alarmed units'}
-            text={
-              'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
-            }
+            // text={
+            //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
+            // }
           />
           <Feature
             icon={<FontAwesomeIcon icon={faMobileNotch} size="2x" />}
             title={'Cell phone app controlled access'}
-            text={
-              'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
-            }
+            // text={
+            //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
+            // }
           />
           <Feature
             icon={<FontAwesomeIcon icon={faCaravan} size="2x" />}
             title={'RV utilities'}
-            text={'Dump station along with compressed air and potable water'}
+            // text={'Dump station along with compressed air and potable water'}
           />
         </SimpleGrid>
       </Container>
