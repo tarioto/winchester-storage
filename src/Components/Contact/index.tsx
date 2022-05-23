@@ -33,7 +33,6 @@ function Contact() {
             variant={'solid'}
             colorScheme={'blue'}
             size={'lg'}
-            ml={4}
             leftIcon={<FontAwesomeIcon icon={faEnvelope} />}
             onClick={(e) => {
               window.location.href = `mailto:lee@winchesterrvandboatstorage.com`
@@ -46,7 +45,6 @@ function Contact() {
             variant={'solid'}
             colorScheme={'blue'}
             size={'lg'}
-            ml={4}
             leftIcon={<FontAwesomeIcon icon={faPhone} />}
             onClick={(e) => {
               window.location.href = `tel:+1-775-447-0573`
