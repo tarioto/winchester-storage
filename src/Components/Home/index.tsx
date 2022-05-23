@@ -41,7 +41,7 @@ function Home() {
           </Text>
           <Button
             variant={'solid'}
-            colorScheme={'teal'}
+            colorScheme={'blue'}
             size={'lg'}
             ml={4}
             leftIcon={<FontAwesomeIcon icon={faMessageMiddle} />}
