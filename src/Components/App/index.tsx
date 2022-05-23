@@ -1,4 +1,4 @@
-import Header from '../Header'
+// import Header from '../Header'
 import Home from '../Home'
 import Map from '../Map'
 import Features from '../Features'

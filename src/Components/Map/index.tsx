@@ -1,9 +1,4 @@
-import {
-  Box,
-  AspectRatio,
-  Container,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Box, AspectRatio, Container } from '@chakra-ui/react'
 
 function Map() {
   return (
