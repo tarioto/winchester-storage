@@ -56,7 +56,9 @@ export default function Features() {
     <Box bg={useColorModeValue('gray.100', 'gray.900')}>
       <Container maxW={'5xl'} py={12}>
         <Center p="10">
-          <Heading size="md">All units are 15’x50’ </Heading>
+          <Heading size="md">
+            All units are 15’x50’ indoor secured storage{' '}
+          </Heading>
         </Center>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
           <Feature
