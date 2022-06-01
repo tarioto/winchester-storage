@@ -9,6 +9,7 @@ import {
   Text,
   useColorModeValue,
   Button,
+  Center,
 } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -74,6 +75,14 @@ function Home() {
             >
               Call
             </Button>
+          </SimpleGrid>
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
+            <Heading as="h6" size="xs">
+              <Center>lee@winchesterrvandboatstorage.com</Center>
+            </Heading>
+            <Heading as="h6" size="xs">
+              <Center>+1-775-447-0573</Center>
+            </Heading>
           </SimpleGrid>
           <Stack
             spacing={4}

@@ -5,6 +5,7 @@ import {
   Button,
   useColorModeValue,
   Heading,
+  Center,
 } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from '@fortawesome/pro-duotone-svg-icons'
@@ -53,6 +54,18 @@ function Contact() {
           >
             Call
           </Button>
+        </SimpleGrid>
+        <SimpleGrid
+          columns={{ base: 1, md: 2 }}
+          spacing={{ base: 5, lg: 8 }}
+          mt={4}
+        >
+          <Heading as="h4" size="md">
+            <Center>lee@winchesterrvandboatstorage.com</Center>
+          </Heading>
+          <Heading as="h4" size="md">
+            <Center>+1-775-447-0573</Center>
+          </Heading>
         </SimpleGrid>
       </Container>
     </Box>
