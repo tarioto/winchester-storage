@@ -16,7 +16,7 @@ export default function Gallery() {
           <Image
             rounded={'md'}
             alt={'feature image'}
-            src={process.env.PUBLIC_URL + '/images/outside_fence.png'}
+            src={process.env.PUBLIC_URL + '/images/Drone 11.JPG'}
             objectFit={'cover'}
           />
         </Center>
