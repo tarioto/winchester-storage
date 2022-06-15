@@ -8,7 +8,7 @@ export default function Gallery() {
           <Image
             rounded={'md'}
             alt={'feature image'}
-            src={process.env.PUBLIC_URL + '/images/inside_units.png'}
+            src={process.env.PUBLIC_URL + '/images/Drone 3.JPG'}
             objectFit={'cover'}
           />
         </Center>
@@ -24,7 +24,7 @@ export default function Gallery() {
           <Image
             rounded={'md'}
             alt={'feature image'}
-            src={process.env.PUBLIC_URL + '/images/motorhome.jpg'}
+            src={process.env.PUBLIC_URL + '/images/inside_units.png'}
             objectFit={'cover'}
           />
         </Center>

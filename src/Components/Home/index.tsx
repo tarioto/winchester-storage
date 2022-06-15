@@ -97,7 +97,7 @@ function Home() {
           <Image
             rounded={'md'}
             alt={'hero'}
-            src={process.env.PUBLIC_URL + '/images/Drone 3.JPG'}
+            src={process.env.PUBLIC_URL + '/images/motorhome.jpg'}
             objectFit={'cover'}
           />
         </Flex>
