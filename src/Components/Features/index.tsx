@@ -16,7 +16,6 @@ import {
   faCaravan,
   faFence,
   faLightEmergencyOn,
-  faMobileNotch,
   faThermometerHalf,
 } from '@fortawesome/pro-duotone-svg-icons'
 
