@@ -89,13 +89,13 @@ export default function Features() {
             //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
             // }
           />
-          <Feature
+          {/* <Feature
             icon={<FontAwesomeIcon icon={faMobileNotch} size="2x" />}
             title={'Cell phone app controlled access'}
             // text={
             //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
             // }
-          />
+          /> */}
           <Feature
             icon={<FontAwesomeIcon icon={faCaravan} size="2x" />}
             title={'RV utilities'}
