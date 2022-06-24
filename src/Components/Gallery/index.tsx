@@ -28,6 +28,14 @@ export default function Gallery() {
             objectFit={'cover'}
           />
         </Center>
+        <Center>
+          <Image
+            rounded={'md'}
+            alt={'feature image'}
+            src={process.env.PUBLIC_URL + '/images/inside_with_cars.jpg'}
+            objectFit={'cover'}
+          />
+        </Center>
       </SimpleGrid>
     </Container>
   )
