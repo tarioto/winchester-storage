@@ -1,16 +1,17 @@
 import React from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import './index.scss'
 import App from './Components/App'
 import reportWebVitals from './reportWebVitals'
 import theme from './theme'
 
-ReactDOM.render(
+const container = document.getElementById('app')!
+const root = createRoot(container)
+root.render(
   <ChakraProvider theme={theme}>
     <App />
-  </ChakraProvider>,
-  document.getElementById('root')
+  </ChakraProvider>
 )
 
 // If you want to start measuring performance in your app, pass a function
