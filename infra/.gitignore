@@ -1,0 +1,13 @@
+# Never commit local state or provider plugins.
+# (.terraform.lock.hcl IS committed — it pins provider versions.)
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+*.auto.tfvars
+
+# Bootstrap Tofu-runner-role permissions (broad; created out-of-band, not
+# committed). The trust policy (github-oidc-trust-policy.json) IS committed.
+iam-policy.json
