@@ -42,8 +42,12 @@ CI deploy workflow assumes (no long-lived AWS keys).
      --policy-name tofu-permissions --policy-document file://iam-policy.json
    ```
 
-   Then store its ARN as the `AWS_TOFU_ROLE_ARN` repo secret. (Locally you can
-   just use admin creds.)
+   The role ARN is hardcoded in `.github/workflows/infra.yml` (an ARN is an
+   identifier, not a secret, so it need not be stored as a repo secret — and
+   hardcoding lets Dependabot PRs assume it too, since Actions secrets are
+   withheld from Dependabot runs). If you recreate the role under a different
+   name/account, update the `role-to-assume` value there. (Locally you can just
+   use admin creds.)
 4. Confirm the Route53 **hosted zone** for the domain already exists.
 
 ## Apply
