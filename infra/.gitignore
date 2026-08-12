@@ -1,0 +1,9 @@
+# Never commit local state or provider plugins.
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+*.auto.tfvars
