@@ -4,37 +4,81 @@ on:
   push:
     branches:
       - main
+  pull_request:
+
+# Default to read-only; the deploy job opts into id-token for OIDC.
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@master
+      - uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
-      - name: Install Nodejs
-        uses: actions/setup-node@master
-        with:
-          node-version: '12.x'
-      - name: Install Dependencies
-        run: |
-          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-          npm config set "//npm.fontawesome.com/:_authToken" "${{ secrets.FONT_AWESOME_NPM_PACKAGE_TOKEN }}"
-          npm install
+          node-version: '22.x'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test --run
+
       - name: Build static files
-        run: npm run build
+        run: yarn build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 1
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: us-west-2
+
       - name: Deploy static files to S3 bucket
         run: |
-          aws s3 sync ./build/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
-      - name: Invalidate CloudFront Cache
-        uses: chetan/invalidate-cloudfront-action@master
-        env:
-          DISTRIBUTION: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
-          PATHS: '/*'
-          AWS_REGION: 'us-west-2'
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          # Root files (index.html, favicon, manifest) are not fingerprinted —
+          # must revalidate so new deploys are picked up. assets/* is excluded
+          # here so this pass never touches or deletes the fingerprinted bundle.
+          aws s3 sync ./dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete \
+            --exclude "assets/*" \
+            --cache-control "no-cache"
+          # Vite fingerprints everything under assets/ — safe to cache forever.
+          aws s3 sync ./dist/assets/ s3://${{ secrets.AWS_S3_BUCKET }}/assets/ --delete \
+            --cache-control "public, max-age=31536000, immutable"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
