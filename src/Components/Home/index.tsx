@@ -6,8 +6,7 @@ import {
   Stack,
   SimpleGrid,
   Text,
-  Button,
-  Center,
+  Link,
 } from '@chakra-ui/react'
 import { Mail, Phone, Warehouse } from 'lucide-react'
 
@@ -47,40 +46,30 @@ function Home() {
             <MessageCircle size={18} />
             Get in Touch
           </Button> */}
-          <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 5, lg: 8 }}>
-            <Button
-              variant={'solid'}
-              colorPalette={'blue'}
-              size={'lg'}
-              onClick={(e) => {
-                window.location.href = `mailto:lee@winchesterrvandboatstorage.com`
-                e.preventDefault()
-              }}
+          <Stack gap={2}>
+            <Link
+              href="mailto:lee@winchesterrvandboatstorage.com"
+              display="flex"
+              alignItems="center"
+              gap={2}
+              fontSize="xl"
+              color="blue.500"
             >
-              <Mail size={18} />
-              Email
-            </Button>
-            <Button
-              variant={'solid'}
-              colorPalette={'blue'}
-              size={'lg'}
-              onClick={(e) => {
-                window.location.href = `tel:+1-775-447-0573`
-                e.preventDefault()
-              }}
+              <Mail size={20} />
+              lee@winchesterrvandboatstorage.com
+            </Link>
+            <Link
+              href="tel:+1-775-447-0573"
+              display="flex"
+              alignItems="center"
+              gap={2}
+              fontSize="xl"
+              color="blue.500"
             >
-              <Phone size={18} />
-              Call
-            </Button>
-          </SimpleGrid>
-          <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 5, lg: 8 }}>
-            <Heading as="h6" size="xs">
-              <Center>lee@winchesterrvandboatstorage.com</Center>
-            </Heading>
-            <Heading as="h6" size="xs">
-              <Center>+1-775-447-0573</Center>
-            </Heading>
-          </SimpleGrid>
+              <Phone size={20} />
+              +1-775-447-0573
+            </Link>
+          </Stack>
         </Stack>
         <Flex>
           <Image
