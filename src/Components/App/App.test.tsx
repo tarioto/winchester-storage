@@ -1,13 +1,12 @@
 import { render, screen } from '@testing-library/react'
-import { ChakraProvider } from '@chakra-ui/react'
+import { Provider } from '../ui/provider'
 import App from '.'
-import theme from '../../theme'
 
 test('renders the Winchester storage heading', () => {
   render(
-    <ChakraProvider theme={theme}>
+    <Provider>
       <App />
-    </ChakraProvider>,
+    </Provider>,
   )
   expect(
     screen.getByText(/Winchester RV, boat and Classics Storage/i),

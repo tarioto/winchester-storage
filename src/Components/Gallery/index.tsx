@@ -3,7 +3,7 @@ import { Container, Image, Center, SimpleGrid } from '@chakra-ui/react'
 export default function Gallery() {
   return (
     <Container maxW={'5xl'} py={12}>
-      <SimpleGrid columns={2} spacing={10}>
+      <SimpleGrid columns={2} gap={10}>
         <Center>
           <Image
             rounded={'md'}

@@ -4,7 +4,6 @@ import {
   Flex,
   Button,
   Link,
-  useColorModeValue,
   IconButton,
   useDisclosure,
   HStack,
@@ -21,7 +20,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.100', 'gray.700'),
+      bg: 'bg.muted',
     }}
     href={'#'}
   >
@@ -30,44 +29,40 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 )
 
 function Header() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { open, onOpen, onClose } = useDisclosure()
 
   return (
     <Box px={4}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <IconButton
           size={'md'}
-          icon={isOpen ? <X /> : <MenuIcon />}
           aria-label={'Open Menu'}
           display={{ md: 'none' }}
-          onClick={isOpen ? onClose : onOpen}
-        />
-        <HStack spacing={8} alignItems={'center'}>
+          onClick={open ? onClose : onOpen}
+        >
+          {open ? <X /> : <MenuIcon />}
+        </IconButton>
+        <HStack gap={8} alignItems={'center'}>
           <Box>
             <Warehouse size={32} />
           </Box>
         </HStack>
         <Flex alignItems={'center'}>
-          <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
+          <HStack as={'nav'} gap={4} display={{ base: 'none', md: 'flex' }}>
             {Links.map((link) => (
               <NavLink key={link}>{link}</NavLink>
             ))}
           </HStack>
-          <Button
-            variant={'solid'}
-            colorScheme={'teal'}
-            size={'sm'}
-            ml={4}
-            leftIcon={<MessageCircle size={18} />}
-          >
+          <Button variant={'solid'} colorPalette={'teal'} size={'sm'} ml={4}>
+            <MessageCircle size={18} />
             Get in Touch
           </Button>
         </Flex>
       </Flex>
 
-      {isOpen ? (
+      {open ? (
         <Box pb={4} display={{ md: 'none' }}>
-          <Stack as={'nav'} spacing={4}>
+          <Stack as={'nav'} gap={4}>
             {Links.map((link) => (
               <NavLink key={link}>{link}</NavLink>
             ))}
