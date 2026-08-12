@@ -30,8 +30,20 @@ CI deploy workflow assumes (no long-lived AWS keys).
    `token.actions.githubusercontent.com` (`deploy-role.tf` reads it as a data
    source). Create it once if missing.
 3. **Tofu runner role** — the `infra.yml` workflow assumes an OIDC role with
-   permissions to manage these resources; create it and store its ARN as the
-   `AWS_TOFU_ROLE_ARN` repo secret. (Locally you can just use admin creds.)
+   permissions to manage these resources. This role is created **out-of-band**
+   (not managed by Tofu — it's what runs Tofu). Trust is in the committed
+   `github-oidc-trust-policy.json`; permissions are in the gitignored
+   `iam-policy.json`. Bootstrap it once:
+
+   ```bash
+   aws iam create-role --role-name winchester-github-actions-tofu \
+     --assume-role-policy-document file://github-oidc-trust-policy.json
+   aws iam put-role-policy --role-name winchester-github-actions-tofu \
+     --policy-name tofu-permissions --policy-document file://iam-policy.json
+   ```
+
+   Then store its ARN as the `AWS_TOFU_ROLE_ARN` repo secret. (Locally you can
+   just use admin creds.)
 4. Confirm the Route53 **hosted zone** for the domain already exists.
 
 ## Apply
