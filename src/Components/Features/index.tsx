@@ -8,7 +8,6 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  useColorModeValue,
 } from '@chakra-ui/react'
 import { Caravan, Cctv, Fence, Siren, Thermometer } from 'lucide-react'
 
@@ -28,8 +27,8 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
           align={'center'}
           justify={'center'}
           rounded={'full'}
-          color={useColorModeValue('blue.700', 'blue.200')}
-          bg={useColorModeValue('blue.100', 'blue.900')}
+          color="blue.fg"
+          bg="blue.subtle"
           mb={1}
         >
           {icon}
@@ -45,14 +44,14 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
 
 export default function Features() {
   return (
-    <Box bg={useColorModeValue('gray.100', 'gray.900')}>
+    <Box bg="bg.muted">
       <Container maxW={'5xl'} py={12}>
         <Center p="10">
           <Heading size="md">
             All units are 15’x50’ indoor secured storage{' '}
           </Heading>
         </Center>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} gap={10}>
           <Feature
             icon={<Thermometer size={32} />}
             title={'Individually heated'}

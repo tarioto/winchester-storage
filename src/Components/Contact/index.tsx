@@ -3,7 +3,6 @@ import {
   SimpleGrid,
   Container,
   Button,
-  useColorModeValue,
   Heading,
   Center,
 } from '@chakra-ui/react'
@@ -11,12 +10,8 @@ import { Mail, Phone } from 'lucide-react'
 
 function Contact() {
   return (
-    <Box bg={useColorModeValue('gray.100', 'gray.900')}>
-      <Container
-        bg={useColorModeValue('gray.100', 'gray.900')}
-        maxW={'5xl'}
-        py={12}
-      >
+    <Box bg="bg.muted">
+      <Container bg="bg.muted" maxW={'5xl'} py={12}>
         <Box
           maxW="7xl"
           mx={'auto'}
@@ -28,37 +23,33 @@ function Contact() {
             Interested? Contact us to find out more!
           </Heading>
         </Box>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 5, lg: 8 }}>
           <Button
             variant={'solid'}
-            colorScheme={'blue'}
+            colorPalette={'blue'}
             size={'lg'}
-            leftIcon={<Mail size={18} />}
             onClick={(e) => {
               window.location.href = `mailto:lee@winchesterrvandboatstorage.com`
               e.preventDefault()
             }}
           >
+            <Mail size={18} />
             Email
           </Button>
           <Button
             variant={'solid'}
-            colorScheme={'blue'}
+            colorPalette={'blue'}
             size={'lg'}
-            leftIcon={<Phone size={18} />}
             onClick={(e) => {
               window.location.href = `tel:+1-775-447-0573`
               e.preventDefault()
             }}
           >
+            <Phone size={18} />
             Call
           </Button>
         </SimpleGrid>
-        <SimpleGrid
-          columns={{ base: 1, md: 2 }}
-          spacing={{ base: 5, lg: 8 }}
-          mt={4}
-        >
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 5, lg: 8 }} mt={4}>
           <Heading as="h4" size="md">
             <Center>lee@winchesterrvandboatstorage.com</Center>
           </Heading>
