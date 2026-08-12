@@ -29,7 +29,7 @@ jobs:
       run:
         working-directory: infra
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: opentofu/setup-opentofu@v2
         with:
@@ -37,7 +37,7 @@ jobs:
           tofu_wrapper: false
 
       - name: Configure AWS credentials (OIDC)
-        uses: aws-actions/configure-aws-credentials@v5
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           # ARN is hardcoded (not a secret) so Dependabot PRs can also assume the
           # role — Actions secrets are withheld from Dependabot runs. Access is
