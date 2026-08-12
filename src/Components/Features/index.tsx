@@ -5,7 +5,6 @@ import {
   Container,
   Flex,
   Heading,
-  SimpleGrid,
   Stack,
   Text,
 } from '@chakra-ui/react'
@@ -19,7 +18,7 @@ interface FeatureProps {
 
 const Feature = ({ title, text, icon }: FeatureProps) => {
   return (
-    <Stack>
+    <Stack flex="1 1 220px" maxW="280px">
       <Center>
         <Flex
           w={16}
@@ -51,7 +50,7 @@ export default function Features() {
             All units are 15’x50’ indoor secured storage{' '}
           </Heading>
         </Center>
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap={10}>
+        <Flex wrap="wrap" justify="center" gap={10}>
           <Feature
             icon={<Thermometer size={32} />}
             title={'Individually heated'}
@@ -92,7 +91,7 @@ export default function Features() {
             title={'RV utilities'}
             // text={'Dump station along with compressed air and potable water'}
           />
-        </SimpleGrid>
+        </Flex>
       </Container>
     </Box>
   )
