@@ -36,7 +36,9 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
       <Center>
         <Text fontWeight={600}>{title}</Text>
       </Center>
-      <Text color={'gray.600'}>{text}</Text>
+      <Text color={'gray.600'} textAlign={'center'}>
+        {text}
+      </Text>
     </Stack>
   )
 }
@@ -54,30 +56,30 @@ export default function Features() {
           <Feature
             icon={<Thermometer size={32} />}
             title={'Individually heated'}
-            // text={
-            //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
-            // }
+            text={
+              'Each unit is individually heated to protect your RV, boat, or classic from freezing temperatures year-round.'
+            }
           />
           <Feature
             icon={<Cctv size={32} />}
             title={'Video surveillance'}
-            // text={
-            //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
-            // }
+            text={
+              'The facility is monitored around the clock with video surveillance for added peace of mind.'
+            }
           />
           <Feature
             icon={<Fence size={32} />}
             title={'Fully fenced'}
-            // text={
-            //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
-            // }
+            text={
+              'The entire property is fully fenced with controlled access to keep your belongings secure.'
+            }
           />
           <Feature
             icon={<Siren size={32} />}
             title={'Individually alarmed units'}
-            // text={
-            //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
-            // }
+            text={
+              'Every unit has its own alarm, so your storage space is protected independently.'
+            }
           />
           {/* <Feature
             icon={<Smartphone size={32} />}
@@ -89,7 +91,7 @@ export default function Features() {
           <Feature
             icon={<Caravan size={32} />}
             title={'RV utilities'}
-            // text={'Dump station along with compressed air and potable water'}
+            text={'Dump station along with compressed air and potable water.'}
           />
         </Flex>
       </Container>
