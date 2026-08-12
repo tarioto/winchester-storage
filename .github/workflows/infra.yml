@@ -39,7 +39,10 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v5
         with:
-          role-to-assume: ${{ secrets.AWS_TOFU_ROLE_ARN }}
+          # ARN is hardcoded (not a secret) so Dependabot PRs can also assume the
+          # role — Actions secrets are withheld from Dependabot runs. Access is
+          # gated by the OIDC trust policy in github-oidc-trust-policy.json.
+          role-to-assume: arn:aws:iam::322859817636:role/winchester-github-actions-tofu
           aws-region: us-east-1
 
       - name: tofu init
