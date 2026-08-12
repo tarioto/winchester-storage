@@ -28,7 +28,10 @@ function Home() {
             alignSelf={'flex-start'}
             rounded={'md'}
           >
-            <Warehouse size={16} style={{ display: 'inline', verticalAlign: 'text-bottom' }} />{' '}
+            <Warehouse
+              size={16}
+              style={{ display: 'inline', verticalAlign: 'text-bottom' }}
+            />{' '}
             Units available
           </Text>
           <Heading>Winchester RV, boat and Classics Storage</Heading>
