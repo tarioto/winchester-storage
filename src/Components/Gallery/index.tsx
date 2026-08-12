@@ -8,7 +8,7 @@ export default function Gallery() {
           <Image
             rounded={'md'}
             alt={'feature image'}
-            src={process.env.PUBLIC_URL + '/images/Drone 3.JPG'}
+            src={'/images/Drone 3.JPG'}
             objectFit={'cover'}
           />
         </Center>
@@ -16,7 +16,7 @@ export default function Gallery() {
           <Image
             rounded={'md'}
             alt={'feature image'}
-            src={process.env.PUBLIC_URL + '/images/Drone 11.JPG'}
+            src={'/images/Drone 11.JPG'}
             objectFit={'cover'}
           />
         </Center>
@@ -24,7 +24,7 @@ export default function Gallery() {
           <Image
             rounded={'md'}
             alt={'feature image'}
-            src={process.env.PUBLIC_URL + '/images/inside_units.png'}
+            src={'/images/inside_units.png'}
             objectFit={'cover'}
           />
         </Center>
@@ -32,7 +32,7 @@ export default function Gallery() {
           <Image
             rounded={'md'}
             alt={'feature image'}
-            src={process.env.PUBLIC_URL + '/images/inside_with_cars.jpg'}
+            src={'/images/inside_with_cars.jpg'}
             objectFit={'cover'}
           />
         </Center>
@@ -40,7 +40,7 @@ export default function Gallery() {
           <Image
             rounded={'md'}
             alt={'feature image'}
-            src={process.env.PUBLIC_URL + '/images/boat.jpg'}
+            src={'/images/boat.jpg'}
             objectFit={'cover'}
           />
         </Center>
@@ -48,7 +48,7 @@ export default function Gallery() {
           <Image
             rounded={'md'}
             alt={'feature image'}
-            src={process.env.PUBLIC_URL + '/images/front_night.jpg'}
+            src={'/images/front_night.jpg'}
             objectFit={'cover'}
           />
         </Center>

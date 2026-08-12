@@ -1,30 +1,16 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faBars,
-  faHamburger,
-  faMessageMiddle,
-  faWarehouse,
-  faXmark,
-} from '@fortawesome/pro-duotone-svg-icons'
+import { Menu as MenuIcon, MessageCircle, Warehouse, X } from 'lucide-react'
 import {
   Box,
   Flex,
-  Heading,
   Button,
-  Spacer,
-  Center,
   Link,
   useColorModeValue,
   IconButton,
   useDisclosure,
   HStack,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
   Stack,
 } from '@chakra-ui/react'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 const Links = ['Features']
 
@@ -51,20 +37,14 @@ function Header() {
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <IconButton
           size={'md'}
-          icon={
-            isOpen ? (
-              <FontAwesomeIcon icon={faXmark} />
-            ) : (
-              <FontAwesomeIcon icon={faBars} />
-            )
-          }
+          icon={isOpen ? <X /> : <MenuIcon />}
           aria-label={'Open Menu'}
           display={{ md: 'none' }}
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={'center'}>
           <Box>
-            <FontAwesomeIcon icon={faWarehouse} size="2x" />
+            <Warehouse size={32} />
           </Box>
         </HStack>
         <Flex alignItems={'center'}>
@@ -78,7 +58,7 @@ function Header() {
             colorScheme={'teal'}
             size={'sm'}
             ml={4}
-            leftIcon={<FontAwesomeIcon icon={faMessageMiddle} />}
+            leftIcon={<MessageCircle size={18} />}
           >
             Get in Touch
           </Button>

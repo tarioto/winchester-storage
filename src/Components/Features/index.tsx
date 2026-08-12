@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import type { ReactElement } from 'react'
 import {
   Box,
   Center,
@@ -10,14 +10,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faCameraCctv,
-  faCaravan,
-  faFence,
-  faLightEmergencyOn,
-  faThermometerHalf,
-} from '@fortawesome/pro-duotone-svg-icons'
+import { Caravan, Cctv, Fence, Siren, Thermometer } from 'lucide-react'
 
 interface FeatureProps {
   title: string
@@ -61,42 +54,42 @@ export default function Features() {
         </Center>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
           <Feature
-            icon={<FontAwesomeIcon icon={faThermometerHalf} size="2x" />}
+            icon={<Thermometer size={32} />}
             title={'Individually heated'}
             // text={
             //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
             // }
           />
           <Feature
-            icon={<FontAwesomeIcon icon={faCameraCctv} size="2x" />}
+            icon={<Cctv size={32} />}
             title={'Video surveillance'}
             // text={
             //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
             // }
           />
           <Feature
-            icon={<FontAwesomeIcon icon={faFence} size="2x" />}
+            icon={<Fence size={32} />}
             title={'Fully fenced'}
             // text={
             //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
             // }
           />
           <Feature
-            icon={<FontAwesomeIcon icon={faLightEmergencyOn} size="2x" />}
+            icon={<Siren size={32} />}
             title={'Individually alarmed units'}
             // text={
             //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
             // }
           />
           {/* <Feature
-            icon={<FontAwesomeIcon icon={faMobileNotch} size="2x" />}
+            icon={<Smartphone size={32} />}
             title={'Cell phone app controlled access'}
             // text={
             //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
             // }
           /> */}
           <Feature
-            icon={<FontAwesomeIcon icon={faCaravan} size="2x" />}
+            icon={<Caravan size={32} />}
             title={'RV utilities'}
             // text={'Dump station along with compressed air and potable water'}
           />

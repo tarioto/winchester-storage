@@ -11,12 +11,7 @@ import {
   Button,
   Center,
 } from '@chakra-ui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faWarehouse,
-  faEnvelope,
-  faPhone,
-} from '@fortawesome/pro-duotone-svg-icons'
+import { Mail, Phone, Warehouse } from 'lucide-react'
 
 function Home() {
   return (
@@ -33,7 +28,8 @@ function Home() {
             alignSelf={'flex-start'}
             rounded={'md'}
           >
-            <FontAwesomeIcon icon={faWarehouse} /> Units available
+            <Warehouse size={16} style={{ display: 'inline', verticalAlign: 'text-bottom' }} />{' '}
+            Units available
           </Text>
           <Heading>Winchester RV, boat and Classics Storage</Heading>
           <Text color={'gray.500'} fontSize={'lg'}>
@@ -46,7 +42,7 @@ function Home() {
             colorScheme={'blue'}
             size={'lg'}
             ml={4}
-            leftIcon={<FontAwesomeIcon icon={faMessageMiddle} />}
+            leftIcon={<MessageCircle size={18} />}
           >
             Get in Touch
           </Button> */}
@@ -55,7 +51,7 @@ function Home() {
               variant={'solid'}
               colorScheme={'blue'}
               size={'lg'}
-              leftIcon={<FontAwesomeIcon icon={faEnvelope} />}
+              leftIcon={<Mail size={18} />}
               onClick={(e) => {
                 window.location.href = `mailto:lee@winchesterrvandboatstorage.com`
                 e.preventDefault()
@@ -67,7 +63,7 @@ function Home() {
               variant={'solid'}
               colorScheme={'blue'}
               size={'lg'}
-              leftIcon={<FontAwesomeIcon icon={faPhone} />}
+              leftIcon={<Phone size={18} />}
               onClick={(e) => {
                 window.location.href = `tel:+1-775-447-0573`
                 e.preventDefault()
@@ -97,7 +93,7 @@ function Home() {
           <Image
             rounded={'md'}
             alt={'hero'}
-            src={process.env.PUBLIC_URL + '/images/motorhome.jpg'}
+            src={'/images/motorhome.jpg'}
             objectFit={'cover'}
           />
         </Flex>

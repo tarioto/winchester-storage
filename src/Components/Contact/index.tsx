@@ -7,8 +7,7 @@ import {
   Heading,
   Center,
 } from '@chakra-ui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faPhone } from '@fortawesome/pro-duotone-svg-icons'
+import { Mail, Phone } from 'lucide-react'
 
 function Contact() {
   return (
@@ -34,7 +33,7 @@ function Contact() {
             variant={'solid'}
             colorScheme={'blue'}
             size={'lg'}
-            leftIcon={<FontAwesomeIcon icon={faEnvelope} />}
+            leftIcon={<Mail size={18} />}
             onClick={(e) => {
               window.location.href = `mailto:lee@winchesterrvandboatstorage.com`
               e.preventDefault()
@@ -46,7 +45,7 @@ function Contact() {
             variant={'solid'}
             colorScheme={'blue'}
             size={'lg'}
-            leftIcon={<FontAwesomeIcon icon={faPhone} />}
+            leftIcon={<Phone size={18} />}
             onClick={(e) => {
               window.location.href = `tel:+1-775-447-0573`
               e.preventDefault()
