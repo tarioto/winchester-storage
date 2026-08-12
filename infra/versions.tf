@@ -9,10 +9,9 @@ terraform {
   }
 
   # Remote state in S3 with native S3 locking (use_lockfile, no DynamoDB).
-  # TODO(before `tofu init`): create this state bucket (versioned + encrypted)
-  # and replace ACCOUNT_ID with the target AWS account number.
+  # Bucket is versioned + encrypted (created out-of-band during bootstrap).
   backend "s3" {
-    bucket       = "winchester-tofu-state-ACCOUNT_ID"
+    bucket       = "winchester-tofu-state-322859817636"
     key          = "winchester-storage/terraform.tfstate"
     region       = "us-east-1"
     encrypt      = true

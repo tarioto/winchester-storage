@@ -1,6 +1,6 @@
 # Never commit local state or provider plugins.
+# (.terraform.lock.hcl IS committed — it pins provider versions.)
 .terraform/
-.terraform.lock.hcl
 *.tfstate
 *.tfstate.*
 *.tfplan
