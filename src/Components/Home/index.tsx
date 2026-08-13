@@ -46,7 +46,7 @@ function Home() {
             <MessageCircle size={18} />
             Get in Touch
           </Button> */}
-          <Stack gap={2}>
+          <Stack gap={2} mt={'auto'}>
             <Link
               href="mailto:lee@winchesterrvandboatstorage.com"
               display="flex"
