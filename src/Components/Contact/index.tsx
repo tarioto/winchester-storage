@@ -5,6 +5,7 @@ import {
   Button,
   Heading,
   Center,
+  Link,
 } from '@chakra-ui/react'
 import { Mail, Phone } from 'lucide-react'
 
@@ -51,10 +52,16 @@ function Contact() {
         </SimpleGrid>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 5, lg: 8 }} mt={4}>
           <Heading as="h4" size="md">
-            <Center>lee@winchesterrvandboatstorage.com</Center>
+            <Center>
+              <Link href="mailto:lee@winchesterrvandboatstorage.com">
+                lee@winchesterrvandboatstorage.com
+              </Link>
+            </Center>
           </Heading>
           <Heading as="h4" size="md">
-            <Center>+1-775-447-0573</Center>
+            <Center>
+              <Link href="tel:+1-775-447-0573">+1-775-447-0573</Link>
+            </Center>
           </Heading>
         </SimpleGrid>
       </Container>

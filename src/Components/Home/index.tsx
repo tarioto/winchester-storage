@@ -1,21 +1,22 @@
-import {
-  Container,
-  Flex,
-  Heading,
-  Image,
-  Stack,
-  SimpleGrid,
-  Text,
-  Button,
-  Center,
-} from '@chakra-ui/react'
+import { Box, Container, Heading, Stack, Text, Link } from '@chakra-ui/react'
 import { Mail, Phone, Warehouse } from 'lucide-react'
 
 function Home() {
   return (
-    <Container maxW={'5xl'} py={12}>
-      <SimpleGrid columns={{ base: 1, md: 2 }} gap={10}>
-        <Stack gap={4}>
+    <Box
+      minH={{ base: '560px', md: '640px' }}
+      display="flex"
+      alignItems="center"
+      color="white"
+      backgroundPosition={{ base: 'right center', md: 'center' }}
+      style={{
+        backgroundImage:
+          "linear-gradient(to right, rgba(21,35,60,0.92), rgba(30,52,88,0.6) 55%, rgba(30,52,88,0.2)), url('/images/motorhome.jpg')",
+        backgroundSize: 'cover',
+      }}
+    >
+      <Container maxW={'5xl'} py={12}>
+        <Stack gap={4} maxW={'2xl'}>
           <Text
             textTransform={'uppercase'}
             color={'green.400'}
@@ -32,66 +33,41 @@ function Home() {
             />{' '}
             Units available
           </Text>
-          <Heading>Winchester RV, boat and Classics Storage</Heading>
-          <Text color={'gray.500'} fontSize={'lg'}>
+          <Heading size={'3xl'}>
+            Winchester RV, boat and Classics Storage
+          </Heading>
+          <Text color={'gray.200'} fontSize={'lg'}>
             Centrally located in South Reno's fastest growing area. Conveniently
             located 1/2 mile from two major grocery stores, two major fuel
             stations and from highway 580 onramp.
           </Text>
-          {/* <Button
-            variant={'solid'}
-            colorPalette={'blue'}
-            size={'lg'}
-            ml={4}
-          >
-            <MessageCircle size={18} />
-            Get in Touch
-          </Button> */}
-          <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 5, lg: 8 }}>
-            <Button
-              variant={'solid'}
-              colorPalette={'blue'}
-              size={'lg'}
-              onClick={(e) => {
-                window.location.href = `mailto:lee@winchesterrvandboatstorage.com`
-                e.preventDefault()
-              }}
+          <Stack gap={2} mt={2}>
+            <Link
+              href="mailto:lee@winchesterrvandboatstorage.com"
+              display="flex"
+              alignItems="center"
+              gap={2}
+              fontSize="xl"
+              color="blue.200"
             >
-              <Mail size={18} />
-              Email
-            </Button>
-            <Button
-              variant={'solid'}
-              colorPalette={'blue'}
-              size={'lg'}
-              onClick={(e) => {
-                window.location.href = `tel:+1-775-447-0573`
-                e.preventDefault()
-              }}
+              <Mail size={20} />
+              lee@winchesterrvandboatstorage.com
+            </Link>
+            <Link
+              href="tel:+1-775-447-0573"
+              display="flex"
+              alignItems="center"
+              gap={2}
+              fontSize="xl"
+              color="blue.200"
             >
-              <Phone size={18} />
-              Call
-            </Button>
-          </SimpleGrid>
-          <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 5, lg: 8 }}>
-            <Heading as="h6" size="xs">
-              <Center>lee@winchesterrvandboatstorage.com</Center>
-            </Heading>
-            <Heading as="h6" size="xs">
-              <Center>+1-775-447-0573</Center>
-            </Heading>
-          </SimpleGrid>
+              <Phone size={20} />
+              +1-775-447-0573
+            </Link>
+          </Stack>
         </Stack>
-        <Flex>
-          <Image
-            rounded={'md'}
-            alt={'hero'}
-            src={'/images/motorhome.jpg'}
-            objectFit={'cover'}
-          />
-        </Flex>
-      </SimpleGrid>
-    </Container>
+      </Container>
+    </Box>
   )
 }
 
