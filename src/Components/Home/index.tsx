@@ -1,6 +1,9 @@
 import { Box, Container, Heading, Stack, Text, Link } from '@chakra-ui/react'
 import { Mail, Phone, Warehouse } from 'lucide-react'
 
+// Temporarily hidden — flip to true to bring the badge back.
+const SHOW_UNITS_AVAILABLE_BADGE = false
+
 function Home() {
   return (
     <Box
@@ -17,22 +20,24 @@ function Home() {
     >
       <Container maxW={'5xl'} py={12}>
         <Stack gap={4} maxW={'2xl'}>
-          <Text
-            textTransform={'uppercase'}
-            color={'green.400'}
-            fontWeight={600}
-            fontSize={'sm'}
-            bg="green.subtle"
-            p={2}
-            alignSelf={'flex-start'}
-            rounded={'md'}
-          >
-            <Warehouse
-              size={16}
-              style={{ display: 'inline', verticalAlign: 'text-bottom' }}
-            />{' '}
-            Units available
-          </Text>
+          {SHOW_UNITS_AVAILABLE_BADGE && (
+            <Text
+              textTransform={'uppercase'}
+              color={'green.400'}
+              fontWeight={600}
+              fontSize={'sm'}
+              bg="green.subtle"
+              p={2}
+              alignSelf={'flex-start'}
+              rounded={'md'}
+            >
+              <Warehouse
+                size={16}
+                style={{ display: 'inline', verticalAlign: 'text-bottom' }}
+              />{' '}
+              Units available
+            </Text>
+          )}
           <Heading size={'3xl'}>
             Winchester RV, boat and Classics Storage
           </Heading>
