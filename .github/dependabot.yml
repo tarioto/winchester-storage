@@ -1,7 +1,7 @@
 version: 2
 updates:
-  # Application dependencies (Yarn / npm).
-  - package-ecosystem: npm
+  # Application dependencies (Bun).
+  - package-ecosystem: bun
     directory: /
     schedule:
       interval: weekly

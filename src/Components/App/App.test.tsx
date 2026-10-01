@@ -1,3 +1,4 @@
+import { expect, test } from 'bun:test'
 import { render, screen } from '@testing-library/react'
 import { Provider } from '../ui/provider'
 import App from '.'

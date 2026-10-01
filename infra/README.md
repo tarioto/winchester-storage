@@ -69,7 +69,7 @@ new-stack cutover (mirrors how timarioto.com was migrated):
 # 1. Apply, then push content to the NEW bucket and verify via the CloudFront
 #    domain BEFORE touching DNS:
 tofu output                       # note s3_bucket + cloudfront_distribution_id
-cd .. && yarn build
+cd .. && bun run build
 aws s3 sync ./dist/ s3://<s3_bucket>/ --delete
 #    open https://<cloudfront_domain_name> and confirm the site renders.
 

@@ -1,8 +1,26 @@
+import { afterEach, expect } from 'bun:test'
+import { cleanup } from '@testing-library/react'
+import * as matchers from '@testing-library/jest-dom/matchers'
+import type { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers'
+
 // jest-dom adds custom matchers for asserting on DOM nodes.
 // e.g. expect(element).toHaveTextContent(/react/i)
-import '@testing-library/jest-dom'
+expect.extend(matchers)
 
-// jsdom does not implement matchMedia, which Chakra UI's color-mode reads.
+declare module 'bun:test' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  interface Matchers<T>
+    extends TestingLibraryMatchers<typeof expect.stringContaining, T> {}
+}
+
+// Unmount rendered trees between tests; RTL only auto-registers this when a
+// global afterEach exists.
+afterEach(() => {
+  cleanup()
+})
+
+// The DOM test environment does not implement matchMedia, which Chakra UI's
+// color-mode reads.
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: (query: string) => ({

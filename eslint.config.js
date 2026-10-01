@@ -27,11 +27,4 @@ export default tseslint.config(
       ],
     },
   },
-  // Test files run under Vitest globals.
-  {
-    files: ['**/*.{test,spec}.{ts,tsx}', 'src/setupTests.ts'],
-    languageOptions: {
-      globals: globals.vitest,
-    },
-  },
 )

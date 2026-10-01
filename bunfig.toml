@@ -1,0 +1,5 @@
+[serve.static]
+plugins = ["./public-files.ts"]
+
+[test]
+preload = ["./happydom.ts", "./src/setupTests.ts"]
