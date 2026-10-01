@@ -1,5 +1,3 @@
-// import Header from '../Header'
-
 import Contact from '../Contact'
 import Features from '../Features'
 import Footer from '../Footer'
@@ -10,7 +8,6 @@ import LocationMap from '../Map'
 function App() {
   return (
     <div className="App">
-      {/* <Header /> */}
       <Home />
       <LocationMap />
       <Features />

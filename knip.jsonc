@@ -1,0 +1,9 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema-jsonc.json",
+  // Loaded implicitly by Bun's dev server for React Fast Refresh.
+  "ignoreDependencies": ["react-refresh"],
+  "ignoreIssues": {
+    // Chakra UI CLI snippets; unused exports are expected.
+    "src/Components/ui/**": ["exports", "types"]
+  }
+}

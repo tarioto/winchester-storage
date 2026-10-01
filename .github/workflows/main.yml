@@ -31,6 +31,9 @@ jobs:
       - name: Lint
         run: bun run lint
 
+      - name: Check for unused files, exports, and dependencies
+        run: bun run knip
+
       - name: Test
         run: bun test
 
