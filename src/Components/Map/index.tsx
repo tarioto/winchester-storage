@@ -1,5 +1,5 @@
 import { AspectRatio, Box, Container } from '@chakra-ui/react'
-import { useColorModeValue } from '../ui/color-mode'
+import { useColorModeValue } from '../ui/use-color-mode'
 
 function LocationMap() {
   const mapFilter = useColorModeValue('none', 'invert(90%) hue-rotate(180deg)')
