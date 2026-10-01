@@ -4,7 +4,8 @@ const root = import.meta.dir
 
 // Leave root-absolute URLs in index.html that point into public/ (favicon,
 // manifest, logos) untouched instead of bundling them. dev.ts serves public/
-// directly and build.ts copies it into dist/ verbatim.
+// directly (see its workaround for Bun 1.3's dev server) and build.ts copies
+// it into dist/ verbatim.
 const publicFiles: BunPlugin = {
   name: 'public-files',
   setup(build) {
