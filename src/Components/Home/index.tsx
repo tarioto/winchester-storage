@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Stack, Text, Link } from '@chakra-ui/react'
+import { Box, Container, Heading, Link, Stack, Text } from '@chakra-ui/react'
 import { Mail, Phone, Warehouse } from 'lucide-react'
 
 // Temporarily hidden — flip to true to bring the badge back.

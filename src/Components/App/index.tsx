@@ -1,17 +1,15 @@
-// import Header from '../Header'
-import Home from '../Home'
-import Map from '../Map'
-import Features from '../Features'
 import Contact from '../Contact'
-import Gallery from '../Gallery'
+import Features from '../Features'
 import Footer from '../Footer'
+import Gallery from '../Gallery'
+import Home from '../Home'
+import LocationMap from '../Map'
 
 function App() {
   return (
     <div className="App">
-      {/* <Header /> */}
       <Home />
-      <Map />
+      <LocationMap />
       <Features />
       <Gallery />
       <Contact />
