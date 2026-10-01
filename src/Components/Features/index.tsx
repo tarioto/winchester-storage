@@ -1,4 +1,3 @@
-import type { ReactElement } from 'react'
 import {
   Box,
   Center,
@@ -9,6 +8,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { Caravan, Cctv, Fence, Siren, Thermometer } from 'lucide-react'
+import type { ReactElement } from 'react'
 
 interface FeatureProps {
   title: string

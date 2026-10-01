@@ -1,4 +1,4 @@
-import { Container, Image, Center, SimpleGrid } from '@chakra-ui/react'
+import { Center, Container, Image, SimpleGrid } from '@chakra-ui/react'
 
 export default function Gallery() {
   return (

@@ -1,7 +1,7 @@
 import { afterEach, expect } from 'bun:test'
-import { cleanup } from '@testing-library/react'
-import * as matchers from '@testing-library/jest-dom/matchers'
 import type { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers'
+import * as matchers from '@testing-library/jest-dom/matchers'
+import { cleanup } from '@testing-library/react'
 
 // jest-dom adds custom matchers for asserting on DOM nodes.
 // e.g. expect(element).toHaveTextContent(/react/i)

@@ -1,14 +1,14 @@
-import { Menu as MenuIcon, MessageCircle, Warehouse, X } from 'lucide-react'
 import {
   Box,
-  Flex,
   Button,
-  Link,
-  IconButton,
-  useDisclosure,
+  Flex,
   HStack,
+  IconButton,
+  Link,
   Stack,
+  useDisclosure,
 } from '@chakra-ui/react'
+import { Menu as MenuIcon, MessageCircle, Warehouse, X } from 'lucide-react'
 import type { ReactNode } from 'react'
 
 const Links = ['Features']

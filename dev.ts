@@ -14,7 +14,7 @@ const server = Bun.serve({
   // Serve static files from public/ (Vite did this automatically).
   async fetch(req) {
     const pathname = decodeURIComponent(new URL(req.url).pathname)
-    const filePath = resolve(publicDir, '.' + pathname)
+    const filePath = resolve(publicDir, `.${pathname}`)
     if (!filePath.startsWith(publicDir + sep)) {
       return new Response('Not found', { status: 404 })
     }

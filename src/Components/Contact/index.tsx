@@ -1,11 +1,11 @@
 import {
   Box,
-  SimpleGrid,
-  Container,
   Button,
-  Heading,
   Center,
+  Container,
+  Heading,
   Link,
+  SimpleGrid,
 } from '@chakra-ui/react'
 import { Mail, Phone } from 'lucide-react'
 
@@ -50,7 +50,11 @@ function Contact() {
             Call
           </Button>
         </SimpleGrid>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 5, lg: 8 }} mt={4}>
+        <SimpleGrid
+          columns={{ base: 1, md: 2 }}
+          gap={{ base: 5, lg: 8 }}
+          mt={4}
+        >
           <Heading as="h4" size="md">
             <Center>
               <Link href="mailto:lee@winchesterrvandboatstorage.com">
