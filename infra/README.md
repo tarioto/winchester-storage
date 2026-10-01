@@ -5,10 +5,9 @@ private S3 bucket served through CloudFront (Origin Access Control) with a
 DNS-validated ACM certificate and Route53 alias records, plus an OIDC role the
 CI deploy workflow assumes (no long-lived AWS keys).
 
-> **Status: authored, not yet applied.** The site currently runs on
-> pre-existing, hand-created AWS resources. This directory defines a clean
-> replacement stack. Nothing here is live until someone with AWS access
-> completes the bootstrap + apply below.
+> **Status: live.** The `Infra` workflow plans on pull requests and applies on
+> merge to `main`. The bootstrap and cutover steps below are kept for reference
+> (e.g. rebuilding the stack in a new account).
 
 ## Resources
 

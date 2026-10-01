@@ -24,6 +24,10 @@ concurrency:
 
 jobs:
   tofu:
+    # Never run for fork PRs: the trust policy admits any `pull_request` token
+    # from this repo, and a fork could change infra/*.tf to run arbitrary code
+    # during plan with the Tofu role's credentials.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     defaults:
       run:
