@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Center,
   Container,
   Heading,
@@ -8,6 +7,38 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react'
 import { Mail, Phone } from 'lucide-react'
+import type { ReactNode } from 'react'
+import { Glass } from '../ui/glass'
+
+function GlassButton({
+  href,
+  children,
+}: {
+  href: string
+  children: ReactNode
+}) {
+  return (
+    <Center>
+      <Glass width={280} height={52} contentProps={{ bg: 'blue.solid/75' }}>
+        <Link
+          href={href}
+          w="full"
+          h="full"
+          justifyContent="center"
+          gap={2}
+          color="white"
+          fontSize="lg"
+          fontWeight="semibold"
+          textDecoration="none"
+          _hover={{ textDecoration: 'none' }}
+          _focusVisible={{ outlineOffset: '-4px', rounded: 'full' }}
+        >
+          {children}
+        </Link>
+      </Glass>
+    </Center>
+  )
+}
 
 function Contact() {
   return (
@@ -25,30 +56,14 @@ function Contact() {
           </Heading>
         </Box>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 5, lg: 8 }}>
-          <Button
-            variant={'solid'}
-            colorPalette={'blue'}
-            size={'lg'}
-            onClick={(e) => {
-              window.location.href = `mailto:lee@winchesterrvandboatstorage.com`
-              e.preventDefault()
-            }}
-          >
+          <GlassButton href="mailto:lee@winchesterrvandboatstorage.com">
             <Mail size={18} />
             Email
-          </Button>
-          <Button
-            variant={'solid'}
-            colorPalette={'blue'}
-            size={'lg'}
-            onClick={(e) => {
-              window.location.href = `tel:+1-775-447-0573`
-              e.preventDefault()
-            }}
-          >
+          </GlassButton>
+          <GlassButton href="tel:+1-775-447-0573">
             <Phone size={18} />
             Call
-          </Button>
+          </GlassButton>
         </SimpleGrid>
         <SimpleGrid
           columns={{ base: 1, md: 2 }}
