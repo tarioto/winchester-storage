@@ -28,6 +28,18 @@ interface GlassProps
   contentProps?: BoxProps
 }
 
+// The library only re-measures its highlight layers on window resize, so a
+// Glass that changes size (e.g. a responsive map) has to nudge it. Every
+// instance listens to the same event, so batch the nudges into one per frame.
+let nudgeFrame = 0
+function requestLibraryRemeasure() {
+  if (nudgeFrame) return
+  nudgeFrame = requestAnimationFrame(() => {
+    nudgeFrame = 0
+    window.dispatchEvent(new Event('resize'))
+  })
+}
+
 // liquid-glass-react renders several sibling layers that are each centered
 // with top/left 50% + translate(-50%, -50%), so it needs a sized, relatively
 // positioned slot to sit in rather than flowing inline. The slot is sized by
@@ -57,10 +69,8 @@ export function Glass({
     return () => observer.disconnect()
   }, [])
 
-  // The library only re-measures its highlight layers on window resize, so
-  // nudge it whenever the slot changes size (e.g. a responsive map).
   useEffect(() => {
-    if (size.width) window.dispatchEvent(new Event('resize'))
+    if (size.width) requestLibraryRemeasure()
   }, [size])
 
   return (

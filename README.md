@@ -71,7 +71,7 @@ pre-commit install   # runs gitleaks on every commit
 │       ├── Gallery/      # Photo gallery
 │       ├── Contact/      # Email and phone actions
 │       ├── Footer/
-│       └── ui/           # Chakra UI CLI snippets (provider, color mode)
+│       └── ui/           # Chakra UI CLI snippets (provider, color mode) and the Glass wrapper
 ├── public/               # Copied verbatim into dist/ (images, favicon, manifest)
 ├── build.ts              # Production build (fingerprints assets under dist/assets/)
 ├── dev.ts                # Dev server
