@@ -40,7 +40,7 @@ const photos = [
 export default function Gallery() {
   return (
     <Container maxW={'5xl'} py={12}>
-      <SimpleGrid columns={2} gap={10}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} gap={10}>
         {photos.map(({ src, alt, ratio }) => (
           <Glass key={src} w="full" aspectRatio={ratio} cornerRadius={16}>
             <Image alt={alt} src={src} w="full" h="full" objectFit={'cover'} />
