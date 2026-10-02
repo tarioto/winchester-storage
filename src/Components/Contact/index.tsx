@@ -19,7 +19,7 @@ function GlassButton({
 }) {
   return (
     <Center>
-      <Glass width={280} height={52} contentProps={{ bg: 'blue.solid/75' }}>
+      <Glass w="280px" h="52px" contentProps={{ bg: 'blue.solid/75' }}>
         <Link
           href={href}
           w="full"

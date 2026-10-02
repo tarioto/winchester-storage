@@ -22,8 +22,8 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
     <Stack flex="1 1 220px" maxW="280px">
       <Center mb={1}>
         <Glass
-          width={64}
-          height={64}
+          w="64px"
+          h="64px"
           cornerRadius={32}
           contentProps={{ color: 'white', bg: 'blue.solid/75' }}
         >
