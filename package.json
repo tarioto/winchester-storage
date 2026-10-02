@@ -16,6 +16,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.37.0",
     "@emotion/react": "^11.13.5",
+    "liquid-glass-react": "^1.1.1",
     "lucide-react": "^1.47.0",
     "next-themes": "^0.4.6",
     "react": "^19.3.0",

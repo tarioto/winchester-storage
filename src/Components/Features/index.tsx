@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { Caravan, Cctv, Fence, Siren, Thermometer } from 'lucide-react'
 import type { ReactElement } from 'react'
+import { Glass } from '../ui/glass'
 
 interface FeatureProps {
   title: string
@@ -19,19 +20,15 @@ interface FeatureProps {
 const Feature = ({ title, text, icon }: FeatureProps) => {
   return (
     <Stack flex="1 1 220px" maxW="280px">
-      <Center>
-        <Flex
+      <Center mb={1}>
+        <Glass
           w={16}
           h={16}
-          align={'center'}
-          justify={'center'}
-          rounded={'full'}
-          color="white"
-          bg="blue.solid"
-          mb={1}
+          cornerRadius={32}
+          contentProps={{ color: 'white', bg: 'blue.solid/75' }}
         >
           {icon}
-        </Flex>
+        </Glass>
       </Center>
       <Center>
         <Text fontWeight={600}>{title}</Text>
@@ -81,13 +78,6 @@ export default function Features() {
               'Every unit has its own alarm, so your storage space is protected independently.'
             }
           />
-          {/* <Feature
-            icon={<Smartphone size={32} />}
-            title={'Cell phone app controlled access'}
-            // text={
-            //   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
-            // }
-          /> */}
           <Feature
             icon={<Caravan size={32} />}
             title={'RV utilities'}
