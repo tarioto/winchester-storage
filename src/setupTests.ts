@@ -8,9 +8,14 @@ import { cleanup } from '@testing-library/react'
 expect.extend(matchers)
 
 declare module 'bun:test' {
+  // Omit toBeEmpty: bun:test has its own with a different signature, and
+  // TypeScript 7 rejects the conflicting declarations.
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   interface Matchers<T>
-    extends TestingLibraryMatchers<typeof expect.stringContaining, T> {}
+    extends Omit<
+      TestingLibraryMatchers<typeof expect.stringContaining, T>,
+      'toBeEmpty'
+    > {}
 }
 
 // Unmount rendered trees between tests; RTL only auto-registers this when a
