@@ -6,7 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!.agents", "!infra"]
+    "includes": ["**", "!.agents", "!.claude", "!infra"]
   },
   "formatter": {
     "enabled": true,

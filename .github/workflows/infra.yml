@@ -3,14 +3,14 @@ name: Infra
 on:
   pull_request:
     paths:
-      - 'infra/**'
-      - '.github/workflows/infra.yml'
+      - "infra/**"
+      - ".github/workflows/infra.yml"
   push:
     branches:
       - main
     paths:
-      - 'infra/**'
-      - '.github/workflows/infra.yml'
+      - "infra/**"
+      - ".github/workflows/infra.yml"
 
 # OIDC token to assume the AWS role; write PR comments with the plan.
 permissions:

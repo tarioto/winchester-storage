@@ -13,14 +13,14 @@ infrastructure defined in OpenTofu.
 
 ## Tech stack
 
-| Area           | Tools |
-| -------------- | ----- |
+| Area           | Tools                                                                                                                                                                                   |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | UI             | [React 19](https://react.dev), [Chakra UI v3](https://chakra-ui.com), [Lucide](https://lucide.dev) icons, [next-themes](https://github.com/pacocoursey/next-themes) for light/dark mode |
-| Build & dev    | [Bun](https://bun.sh) (bundler, dev server with HMR, test runner, package manager), TypeScript |
-| Quality        | [Biome](https://biomejs.dev) (lint and format), [Knip](https://knip.dev) (unused files, exports, and dependencies), `bun test` with Testing Library and happy-dom |
-| Hosting        | AWS S3 (private, Origin Access Control), CloudFront, ACM, Route 53 |
-| Infrastructure | [OpenTofu](https://opentofu.org), with state in S3 |
-| CI/CD          | GitHub Actions with OIDC (no long-lived AWS keys), Dependabot, TruffleHog and gitleaks secret scanning |
+| Build & dev    | [Bun](https://bun.sh) (bundler, dev server with HMR, test runner, package manager), TypeScript                                                                                          |
+| Quality        | [Biome](https://biomejs.dev) (lint and format), [Knip](https://knip.dev) (unused files, exports, and dependencies), `bun test` with Testing Library and happy-dom                       |
+| Hosting        | AWS S3 (private, Origin Access Control), CloudFront, ACM, Route 53                                                                                                                      |
+| Infrastructure | [OpenTofu](https://opentofu.org), with state in S3                                                                                                                                      |
+| CI/CD          | GitHub Actions with OIDC (no long-lived AWS keys), Dependabot, TruffleHog and gitleaks secret scanning                                                                                  |
 
 ## Getting started
 
@@ -38,15 +38,15 @@ bun run dev        # dev server with hot reload; prints its URL
 
 ### Scripts
 
-| Command           | What it does |
-| ----------------- | ------------ |
+| Command           | What it does                                                       |
+| ----------------- | ------------------------------------------------------------------ |
 | `bun run dev`     | Starts the Bun dev server (`dev.ts`) with HMR and serves `public/` |
-| `bun run build`   | Type-checks (`tsc -b`) and bundles into `dist/` (`build.ts`) |
-| `bun run preview` | Serves the built `dist/` locally |
-| `bun run lint`    | Runs Biome lint and format checks |
-| `bun run format`  | Applies Biome fixes and formatting |
-| `bun run knip`    | Reports unused files, exports, and dependencies |
-| `bun test`        | Runs the test suite |
+| `bun run build`   | Type-checks (`tsc -b`) and bundles into `dist/` (`build.ts`)       |
+| `bun run preview` | Serves the built `dist/` locally                                   |
+| `bun run lint`    | Runs Biome lint and format checks                                  |
+| `bun run format`  | Applies Biome fixes and formatting                                 |
+| `bun run knip`    | Reports unused files, exports, and dependencies                    |
+| `bun test`        | Runs the test suite                                                |
 
 ### Local secret scanning (optional)
 
@@ -95,11 +95,11 @@ split:
 
 Three workflows live in `.github/workflows/`:
 
-| Workflow            | Trigger | What it does |
-| ------------------- | ------- | ------------ |
-| **CI** (`main.yml`) | PRs and pushes to `main` | Install, lint, Knip, test, and build. On `main` it also syncs `dist/` to S3 and invalidates CloudFront. |
-| **Infra** (`infra.yml`) | Changes under `infra/` | Runs `tofu fmt`, `validate`, and `plan`, then posts the plan as a PR comment. Applies on merge to `main`. Skipped for PRs from forks. |
-| **Secret Scan** (`secret-scan.yml`) | PRs and pushes to `main` | Runs TruffleHog over the full history and fails on verified secrets. |
+| Workflow                            | Trigger                  | What it does                                                                                                                          |
+| ----------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **CI** (`main.yml`)                 | PRs and pushes to `main` | Install, lint, Knip, test, and build. On `main` it also syncs `dist/` to S3 and invalidates CloudFront.                               |
+| **Infra** (`infra.yml`)             | Changes under `infra/`   | Runs `tofu fmt`, `validate`, and `plan`, then posts the plan as a PR comment. Applies on merge to `main`. Skipped for PRs from forks. |
+| **Secret Scan** (`secret-scan.yml`) | PRs and pushes to `main` | Runs TruffleHog over the full history and fails on verified secrets.                                                                  |
 
 AWS access uses GitHub's OIDC provider, so there are no stored AWS keys. The
 deploy role's trust policy only accepts tokens from `main` on this repository.
@@ -108,10 +108,10 @@ one distribution.
 
 The deploy job reads these repository secrets:
 
-| Secret | Value |
-| ------ | ----- |
-| `AWS_DEPLOY_ROLE_ARN` | `tofu output deploy_role_arn` |
-| `AWS_S3_BUCKET` | `tofu output s3_bucket` |
+| Secret                           | Value                                    |
+| -------------------------------- | ---------------------------------------- |
+| `AWS_DEPLOY_ROLE_ARN`            | `tofu output deploy_role_arn`            |
+| `AWS_S3_BUCKET`                  | `tofu output s3_bucket`                  |
 | `AWS_CLOUDFRONT_DISTRIBUTION_ID` | `tofu output cloudfront_distribution_id` |
 
 Dependabot opens weekly PRs. Minor and patch npm bumps come grouped in one PR,
